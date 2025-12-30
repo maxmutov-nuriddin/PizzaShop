@@ -11,7 +11,7 @@ const Header = ({cartCount}) => {
 
       <nav className={`header__nav ${navActive ? "active" : ""}`}>
         <ul className="header__menu">
-          <li className="header__menu-item"><a className="header__menu-link" href="#home">Home</a></li>
+          <li className="header__menu-item"><a className="header__menu-link" href="#hero">Home</a></li>
           <li className="header__menu-item"><a className="header__menu-link" href="#menu">Menu</a></li>
           <li className="header__menu-item"><a className="header__menu-link" href="#events">Events</a></li>
           <li className="header__menu-item"><a className="header__menu-link" href="#about">About us</a></li>

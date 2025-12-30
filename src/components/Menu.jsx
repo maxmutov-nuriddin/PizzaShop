@@ -82,7 +82,7 @@ const Menu = ({ setCartCount }) => {
       const state = cardStates[pizza.id] || { quantity: 1, selectedSize: 28 };
 
       return (
-         <div className="menu-card">
+         <div className="menu-card" id="menu">
             <img className="menu-card__image" src={pizza.image} alt={pizza.name} />
             <h3 className="menu-card__title">{pizza.name}</h3>
             <p className="menu-card__description">

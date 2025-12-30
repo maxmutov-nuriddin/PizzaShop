@@ -1,9 +1,19 @@
 /*! default */
-/* 
-html,
-body {
-  overflow-x: hidden;
-} */
+#hero {
+  scroll-margin-top: 70px; /* высота шапки */
+}
+
+#menu {
+  scroll-margin-top: 350px; /* высота шапки */
+}
+
+#events {
+  scroll-margin-top: 20px; /* высота шапки */
+}
+
+#about {
+  scroll-margin-top: 70px; /* высота шапки */
+}
 
 html {
   height: 100%;
@@ -1277,3 +1287,513 @@ main {
     font-size: 12px;
   }
 }
+
+/*! NotFoundPage */
+
+.notfound-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    276deg,
+    #1e0c00 4.96%,
+    #1f0700 33.7%,
+    #170a00 68.41%,
+    #1e0d00 96.42%
+  );
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.notfound-container {
+  max-width: 1380px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.notfound-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.notfound-error-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.notfound-digit {
+  font-family: Muller, sans-serif;
+  font-size: clamp(80px, 15vw, 180px);
+  font-weight: 800;
+  background: linear-gradient(261.69deg, #ff6432 12.12%, #ffa228 86.72%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.notfound-pizza-circle {
+  width: clamp(120px, 20vw, 200px);
+  height: clamp(120px, 20vw, 200px);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ff6432;
+  box-shadow: 0 0 40px rgba(255, 100, 50, 0.5);
+  animation: rotate 20s linear infinite;
+}
+
+.notfound-pizza-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.notfound-title {
+  font-family: Muller, sans-serif;
+  font-size: clamp(32px, 5vw, 69.17px);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.notfound-text {
+  font-family: Muller, sans-serif;
+  font-size: clamp(16px, 2vw, 19.56px);
+  color: #a3a3a3;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.5;
+}
+
+.notfound-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.notfound-btn {
+  padding: 17px 56px;
+  border-radius: 50px;
+  font-family: Muller, sans-serif;
+  font-weight: 500;
+  font-size: clamp(16px, 2vw, 17.74px);
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.notfound-btn--primary {
+  background: linear-gradient(261.69deg, #ff5d29 12.12%, #fe9c1c 86.72%);
+  color: #fff;
+  box-shadow: 0px 9px 40px rgba(255, 107, 0, 0.06);
+}
+
+.notfound-btn--primary:hover {
+  filter: drop-shadow(0 0 15px rgba(255, 100, 50, 0.6));
+  transform: translateY(-2px);
+}
+
+.notfound-btn--secondary {
+  border: 2px solid #ff5d29;
+  background-color: transparent;
+  color: #fff;
+}
+
+.notfound-btn--secondary:hover {
+  background: linear-gradient(261.48deg, #fe9c1c -17.13%, #ff5e2a 86.76%);
+}
+
+.notfound-decor {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.notfound-decor--top-left {
+  top: 5%;
+  left: 5%;
+  width: clamp(80px, 10vw, 150px);
+  height: auto;
+}
+
+.notfound-decor--bottom-right {
+  bottom: 5%;
+  right: 5%;
+  width: clamp(100px, 12vw, 180px);
+  height: auto;
+}
+
+.notfound-floating-pizza {
+  position: absolute;
+  filter: drop-shadow(0 5px 25px rgba(255, 100, 50, 0.3));
+  animation: float 6s ease-in-out infinite;
+}
+
+.notfound-floating-pizza--1 {
+  top: 15%;
+  right: 10%;
+  width: clamp(60px, 8vw, 120px);
+  height: auto;
+  animation-delay: 0s;
+}
+
+.notfound-floating-pizza--2 {
+  bottom: 20%;
+  left: 8%;
+  width: clamp(70px, 9vw, 130px);
+  height: auto;
+  animation-name: floatRotated;
+  animation-delay: 3s;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes floatRotated {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-20deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(-20deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .notfound-page {
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .notfound-page {
+    padding: 25px 15px;
+  }
+
+  .notfound-error-number {
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .notfound-buttons {
+    gap: 15px;
+  }
+
+  .notfound-floating-pizza--1,
+  .notfound-floating-pizza--2 {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 540px) {
+  .notfound-page {
+    padding: 20px 10px;
+  }
+
+  .notfound-error-number {
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  .notfound-digit {
+    font-size: clamp(60px, 12vw, 100px);
+  }
+
+  .notfound-pizza-circle {
+    width: clamp(80px, 15vw, 120px);
+    height: clamp(80px, 15vw, 120px);
+    border: 3px solid #ff6432;
+  }
+
+  .notfound-title {
+    font-size: clamp(24px, 6vw, 40px);
+    margin-bottom: 15px;
+  }
+
+  .notfound-text {
+    font-size: clamp(14px, 3.5vw, 18px);
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  .notfound-buttons {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .notfound-btn {
+    padding: 14px 40px;
+    font-size: clamp(14px, 3.5vw, 16px);
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .notfound-decor--top-left,
+  .notfound-decor--bottom-right {
+    width: clamp(60px, 8vw, 100px);
+  }
+
+  .notfound-floating-pizza--1 {
+    top: 10%;
+    right: 5%;
+    width: clamp(40px, 6vw, 80px);
+  }
+
+  .notfound-floating-pizza--2 {
+    bottom: 15%;
+    left: 5%;
+    width: clamp(45px, 7vw, 85px);
+  }
+}
+
+@media (max-width: 480px) {
+  .notfound-page {
+    padding: 20px 10px;
+  }
+
+  .notfound-error-number {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .notfound-digit {
+    font-size: clamp(50px, 11vw, 80px);
+  }
+
+  .notfound-pizza-circle {
+    width: clamp(70px, 14vw, 100px);
+    height: clamp(70px, 14vw, 100px);
+    border: 2px solid #ff6432;
+  }
+
+  .notfound-title {
+    font-size: clamp(22px, 5.5vw, 32px);
+    margin-bottom: 12px;
+  }
+
+  .notfound-text {
+    font-size: clamp(13px, 3.2vw, 16px);
+    margin-bottom: 25px;
+    line-height: 1.4;
+  }
+
+  .notfound-btn {
+    padding: 12px 35px;
+    font-size: clamp(13px, 3.2vw, 15px);
+  }
+}
+
+@media (max-width: 380px) {
+  .notfound-page {
+    padding: 15px 8px;
+  }
+
+  .notfound-error-number {
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+
+  .notfound-digit {
+    font-size: clamp(45px, 10vw, 70px);
+  }
+
+  .notfound-pizza-circle {
+    width: clamp(60px, 13vw, 90px);
+    height: clamp(60px, 13vw, 90px);
+  }
+
+  .notfound-title {
+    font-size: clamp(20px, 5vw, 28px);
+    margin-bottom: 10px;
+  }
+
+  .notfound-text {
+    font-size: clamp(12px, 3vw, 15px);
+    margin-bottom: 20px;
+  }
+
+  .notfound-buttons {
+    gap: 10px;
+  }
+
+  .notfound-btn {
+    padding: 11px 30px;
+    font-size: clamp(12px, 3vw, 14px);
+    max-width: 250px;
+  }
+
+  .notfound-decor--top-left {
+    top: 3%;
+    left: 2%;
+    width: clamp(50px, 7vw, 80px);
+  }
+
+  .notfound-decor--bottom-right {
+    bottom: 3%;
+    right: 2%;
+    width: clamp(55px, 8vw, 85px);
+  }
+
+  .notfound-floating-pizza--1 {
+    top: 8%;
+    right: 3%;
+    width: clamp(35px, 5vw, 70px);
+  }
+
+  .notfound-floating-pizza--2 {
+    bottom: 12%;
+    left: 3%;
+    width: clamp(40px, 6vw, 75px);
+  }
+}
+
+@media (max-width: 320px) {
+  .notfound-page {
+    padding: 15px 5px;
+    min-height: 100vh;
+  }
+
+  .notfound-error-number {
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+
+  .notfound-digit {
+    font-size: 40px;
+  }
+
+  .notfound-pizza-circle {
+    width: 55px;
+    height: 55px;
+    border: 2px solid #ff6432;
+    box-shadow: 0 0 20px rgba(255, 100, 50, 0.4);
+  }
+
+  .notfound-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .notfound-text {
+    font-size: 12px;
+    margin-bottom: 18px;
+    line-height: 1.3;
+    padding: 0 5px;
+  }
+
+  .notfound-text br {
+    display: none;
+  }
+
+  .notfound-buttons {
+    gap: 8px;
+  }
+
+  .notfound-btn {
+    padding: 10px 25px;
+    font-size: 12px;
+    max-width: 220px;
+    border-radius: 40px;
+  }
+
+  .notfound-decor--top-left {
+    top: 2%;
+    left: 1%;
+    width: 45px;
+    opacity: 0.2;
+  }
+
+  .notfound-decor--bottom-right {
+    bottom: 2%;
+    right: 1%;
+    width: 50px;
+    opacity: 0.2;
+  }
+
+  .notfound-floating-pizza--1 {
+    top: 6%;
+    right: 2%;
+    width: 30px;
+    opacity: 0.4;
+  }
+
+  .notfound-floating-pizza--2 {
+    bottom: 10%;
+    left: 2%;
+    width: 35px;
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 768px) {
+  .notfound-btn--primary:hover {
+    filter: none;
+    transform: none;
+  }
+
+  .notfound-btn--secondary:hover {
+    background-color: transparent;
+  }
+
+  .notfound-btn:active {
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 540px) {
+  .notfound-pizza-circle {
+    animation-duration: 30s;
+  }
+
+  .notfound-floating-pizza {
+    animation-duration: 8s;
+  }
+}
+
+@media (max-width: 320px) {
+  .notfound-pizza-circle {
+    animation-duration: 40s;
+  }
+
+  .notfound-floating-pizza {
+    animation-duration: 10s;
+  }
+}
+
+@media (max-width: 320px) and (prefers-reduced-motion: reduce) {
+  .notfound-pizza-circle,
+  .notfound-floating-pizza {
+    animation: none;
+  }
+}
+

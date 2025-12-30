@@ -1,7 +1,7 @@
 
 const Events = () => {
    return (
-      <section className="event container">
+      <section className="event container" id="events">
          <div className="events" data-aos="zoom-in-down" data-aos-duration="2000">
             <img className="events__position-first" src="./img/events-img/Events.svg" alt="" />
             <div className="events__row-1">

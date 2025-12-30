@@ -2,7 +2,7 @@ const Hero = () => {
    const videoSrc = "./img/hero-img/4008533-uhd_4096_2160_25fps.mp4";
 
    return (
-      <section className="hero container">
+      <section className="hero container" id="hero">
          <img className="hero__position-first" src="./img/hero-img/Pizza.svg" alt="" />
 
          <div className="hero__left" data-aos="zoom-in-down" data-aos-duration="2000">
