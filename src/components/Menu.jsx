@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Menu = ({setCartCount}) => {
+const Menu = ({ setCartCount }) => {
    const [activeFilter, setActiveFilter] = useState("Show All");
    const [cardStates, setCardStates] = useState({});
 
@@ -19,7 +19,7 @@ const Menu = ({setCartCount}) => {
 
    useEffect(() => {
       AOS.init();
-      
+
       // Initialize card states
       const initialStates = {};
       pizzaData.forEach(pizza => {
@@ -28,6 +28,7 @@ const Menu = ({setCartCount}) => {
             selectedSize: 28
          };
       });
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCardStates(initialStates);
    }, []);
 
@@ -49,7 +50,7 @@ const Menu = ({setCartCount}) => {
       setCardStates(prev => {
          const currentQuantity = prev[pizzaId]?.quantity || 1;
          const newQuantity = Math.max(1, currentQuantity + change);
-         
+
          return {
             ...prev,
             [pizzaId]: {
@@ -79,7 +80,7 @@ const Menu = ({setCartCount}) => {
 
    const PizzaCard = ({ pizza }) => {
       const state = cardStates[pizza.id] || { quantity: 1, selectedSize: 28 };
-      
+
       return (
          <div className="menu-card">
             <img className="menu-card__image" src={pizza.image} alt={pizza.name} />
@@ -99,7 +100,7 @@ const Menu = ({setCartCount}) => {
                   </button>
                ))}
             </div>
-            <button 
+            <button
                className="menu-card__ingredients-btn"
                onClick={handleIngredientsClick}
             >
@@ -110,14 +111,14 @@ const Menu = ({setCartCount}) => {
                   {pizza.price.toFixed(2)} <sup className="menu-card__currency">$</sup>
                </p>
                <span className="menu-card__counter">
-                  <button 
+                  <button
                      className="menu-card__counter-btn"
                      onClick={() => handleQuantityChange(pizza.id, -1)}
                   >
                      -
                   </button>
                   <span className="menu-card__counter-value">{state.quantity}</span>
-                  <button 
+                  <button
                      className="menu-card__counter-btn menu-card__counter-active"
                      onClick={() => handleQuantityChange(pizza.id, 1)}
                   >
@@ -125,7 +126,7 @@ const Menu = ({setCartCount}) => {
                   </button>
                </span>
             </div>
-            <button 
+            <button
                className="menu-card__order-btn"
                onClick={() => handleOrder(pizza.id)}
             >
@@ -138,7 +139,7 @@ const Menu = ({setCartCount}) => {
    return (
       <section className="menu container">
          <h2 className="menu__title" data-aos="zoom-in">Menu</h2>
-         
+
          <div className="menu__buttons" data-aos="zoom-in" data-aos-duration="2000">
             {["Show All", "Meat", "Vegetarian", "Sea products", "Mushroom"].map(filter => (
                <button
