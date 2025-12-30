@@ -3,11 +3,11 @@ import Menu from '../components/Menu'
 import Events from '../components/Events'
 import About from '../components/About'
 
-const GlobalPages = () => {
+const GlobalPages = ({setCartCount}) => {
    return (
       <>
          <Hero />
-         <Menu />
+         <Menu setCartCount={setCartCount} />
          <Events />
          <About />
       </>
