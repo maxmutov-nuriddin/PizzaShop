@@ -1348,6 +1348,10 @@ main {
   border: 4px solid #ff6432;
   box-shadow: 0 0 40px rgba(255, 100, 50, 0.5);
   animation: rotate 20s linear infinite;
+
+  display: flex;               /* центрируем через flex */
+  justify-content: center;     /* по горизонтали */
+  align-items: center;         /* по вертикали */
 }
 
 .notfound-pizza-image {
@@ -1355,6 +1359,7 @@ main {
   height: 100%;
   object-fit: cover;
 }
+
 
 .notfound-title {
   font-family: Muller, sans-serif;
