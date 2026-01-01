@@ -17,4 +17,4 @@ Modern landing page for a pizza restaurant built with React.
 ## ▶️ Run Locally
 ```bash
 npm install
-npm start
+npm run dev
